@@ -34,3 +34,4 @@ RUN echo "\n" | bash /opt/osxcross/build.sh
 ENV PATH /opt/osxcross/target/bin:$PATH
 
 ONBUILD WORKDIR /home/mruby/code
+ONBUILD ENV GEM_HOME /home/mruby/.gem/
