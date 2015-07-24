@@ -33,6 +33,7 @@ RUN cd /opt/ && \
   git clone https://github.com/tpoechtrager/osxcross.git
 COPY MacOSX10.10.sdk.tar.bz2 /opt/osxcross/tarballs/
 RUN echo "\n" | bash /opt/osxcross/build.sh
+RUN rm /opt/osxcross/tarballs/*
 ENV PATH /opt/osxcross/target/bin:$PATH
 
 ONBUILD WORKDIR /home/mruby/code
