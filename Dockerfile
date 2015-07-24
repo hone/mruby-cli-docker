@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   cpio \
   curl \
   file \
+  g++-multilib \
+  gcc-multilib \
   git \
   gzip \
   libssl-dev \
