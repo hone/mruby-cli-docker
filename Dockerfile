@@ -1,6 +1,7 @@
 FROM ubuntu-debootstrap:14.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+  automake \
   bison \
   build-essential \
   bzip2 \
@@ -14,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   git \
   gzip \
   libssl-dev \
+  libtool \
   libxml2-dev \
   llvm-dev \
   make \
