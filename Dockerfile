@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   make \
   mingw-w64 \
   patch \
+  rpm \
   sed \
   uuid-dev \
   xz-utils
@@ -29,6 +30,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN mkdir -p /opt/ruby-2.2.2/ && \
   curl -s https://s3-external-1.amazonaws.com/heroku-buildpack-ruby/cedar-14/ruby-2.2.2.tgz | tar xzC /opt/ruby-2.2.2/
 ENV PATH /opt/ruby-2.2.2/bin:$PATH
+
+# install fpm to build packages (deb, rpm)
+RUN gem install fpm --no-document
 
 # install osx cross compiling tools
 RUN cd /opt/ && \
