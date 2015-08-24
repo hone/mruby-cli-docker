@@ -24,7 +24,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   rpm \
   sed \
   uuid-dev \
-  xz-utils
+  xz-utils \
+  libgsf-1-dev \
+  gobject-introspection \
+  valac \
+  libgirepository1.0-dev \
+  intltool \
+  debhelper \
+  wget
 
 # install ruby
 RUN mkdir -p /opt/ruby-2.2.2/ && \
@@ -43,5 +50,13 @@ RUN rm /opt/osxcross/tarballs/*
 ENV PATH /opt/osxcross/target/bin:$PATH
 ENV SHELL /bin/bash
 
+# install msitools
+RUN cd /tmp && wget https://launchpad.net/ubuntu/+archive/primary/+files/gcab_0.6.orig.tar.xz && tar -xf gcab_0.6.orig.tar.xz && cd gcab-0.6 && ./configure && make && make install
+
+RUN cd /tmp && wget https://launchpad.net/ubuntu/+archive/primary/+files/msitools_0.94.orig.tar.xz && tar -xf msitools_0.94.orig.tar.xz && cd msitools-0.94 && ./configure && make && make install
+
 ONBUILD WORKDIR /home/mruby/code
 ONBUILD ENV GEM_HOME /home/mruby/.gem/
+
+ONBUILD ENV PATH $GEM_HOME/bin/:$PATH
+ONBUILD ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
