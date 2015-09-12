@@ -31,7 +31,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libgirepository1.0-dev \
   intltool \
   debhelper \
-  wget
+  wget \
+  genisoimage
 
 # install ruby
 RUN mkdir -p /opt/ruby-2.2.2/ && \
