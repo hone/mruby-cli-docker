@@ -37,6 +37,7 @@ COPY MacOSX10.10.sdk.tar.bz2 /opt/osxcross/tarballs/
 RUN echo "\n" | bash /opt/osxcross/build.sh
 RUN rm /opt/osxcross/tarballs/*
 ENV PATH /opt/osxcross/target/bin:$PATH
+ENV SHELL /bin/bash
 
 ONBUILD WORKDIR /home/mruby/code
 ONBUILD ENV GEM_HOME /home/mruby/.gem/
