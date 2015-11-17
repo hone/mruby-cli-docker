@@ -9,11 +9,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   clang \
   cpio \
   curl \
+  debhelper \
   file \
   g++-multilib \
   gcc-multilib \
+  genisoimage \
   git \
+  gobject-introspection \
   gzip \
+  intltool \
+  libgirepository1.0-dev \
+  libgsf-1-dev \
   libssl-dev \
   libtool \
   libxml2-dev \
@@ -24,15 +30,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   rpm \
   sed \
   uuid-dev \
-  xz-utils \
-  libgsf-1-dev \
-  gobject-introspection \
   valac \
-  libgirepository1.0-dev \
-  intltool \
-  debhelper \
   wget \
-  genisoimage
+  xz-utils
 
 # install ruby
 RUN mkdir -p /opt/ruby-2.2.2/ && \
