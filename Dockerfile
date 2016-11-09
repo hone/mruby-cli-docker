@@ -35,9 +35,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   xz-utils
 
 # install ruby
-RUN mkdir -p /opt/ruby-2.2.2/ && \
-  curl -s https://s3-external-1.amazonaws.com/heroku-buildpack-ruby/cedar-14/ruby-2.2.2.tgz | tar xzC /opt/ruby-2.2.2/
-ENV PATH /opt/ruby-2.2.2/bin:$PATH
+RUN mkdir -p /opt/ruby-2.2.5/ && \
+  curl -s https://s3-external-1.amazonaws.com/heroku-buildpack-ruby/cedar-14/ruby-2.2.5.tgz | tar xzC /opt/ruby-2.2.5/
+ENV PATH /opt/ruby-2.2.5/bin:$PATH
 
 # install fpm to build packages (deb, rpm)
 RUN gem install fpm --no-document
